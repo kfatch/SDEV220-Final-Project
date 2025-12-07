@@ -1,5 +1,5 @@
 #Kody Fatch
-#SDEV220 Final Project - Managment App for Clay County Humane Society. Purpose of app is to manage inventory, handle animal information, intake and adoption, and track profit/expenses.Sf
+#SDEV220 Final Project - Managment App for Clay County Humane Society. Purpose of app is to manage inventory, handle animal information, intake and adoption, and track profit/expenses.
 
 # class Animal():
 #     def __init__(self, sex, age, color, name):
@@ -55,7 +55,7 @@ def revenue_menu():
     print("Go Back:        4")
     print("Quit:           0")
 
-menu_lvl = 0
+menu_lvl = 0    #Used for menu identification
 print("Welcome to Clay County Humane Society Management System.")
 print_menu()
 user_input = int(input("Select A Number To Proceed.\n"))
