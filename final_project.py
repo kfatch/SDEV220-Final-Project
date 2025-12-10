@@ -45,7 +45,7 @@ def animal_menu():
 def inventory_menu(): 
     print("Add Item to Order List:         1")
     print("Remove Item from Order List:    2")
-    print("Complete List and Submit Order: 3")
+    print("Show Inventory List:            3")
     print("Go Back:                        4")
     print("Quit:                           0")
 def revenue_menu():
@@ -55,12 +55,44 @@ def revenue_menu():
     print("Go Back:        4")
     print("Quit:           0")
 
-menu_lvl = 0    #Used for menu identification
+menu_lvl = 0    #Used for identify which menu the user is currently in. 0 for main(entry level), 1 for in a menu one level deep, etc
+menu_id = 0    #Used to identify which submenu the user is in. (0 for Main, 1 for Animal, 2 for Inventory, and 3 for Revenue)
+
 print("Welcome to Clay County Humane Society Management System.")
 print_menu()
 user_input = int(input("Select A Number To Proceed.\n"))
-while (user_input < 0) or (user_input > 4):
+while (user_input < 0) or (user_input > 3):
     user_input = int(input("Enter a valid option.\n"))
-else:
-    while (user_input != 0):
-        pass
+menu_lvl += 1
+while (user_input != 0):
+    while (menu_lvl > -1) and (menu_lvl < 3):
+        while menu_lvl == 1:
+            if user_input == 1:
+                animal_menu()
+                user_input = int(input("Select A Number To Proceed.\n"))
+                if (user_input > 0) and (user_input < 4):
+                    menu_lvl += 1
+                else:
+                    menu_lvl -= 1
+            elif user_input == 2:
+                inventory_menu()
+                user_input = int(input("Select A Number To Proceed.\n"))
+                if (user_input > 0) and (user_input < 4):
+                    menu_lvl += 1
+                else:
+                    menu_lvl -= 1
+            elif user_input == 3:
+                revenue_menu()
+                user_input = int(input("Select A Number To Proceed.\n"))
+                if (user_input > 0) and (user_input < 4):
+                    menu_lvl += 1
+                else:
+                    menu_lvl -= 1
+        while menu_lvl == 0:
+            print_menu()
+            user_input = int(input("Select A Number To Proceed.\n"))
+            while (user_input < 0) or (user_input > 3):
+                user_input = int(input("Enter a valid option.\n"))
+            menu_lvl += 1
+        while menu_lvl == 2:
+            pass
