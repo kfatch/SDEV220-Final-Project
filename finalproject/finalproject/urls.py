@@ -1,5 +1,5 @@
 """
-URL configuration for SDEV220Final project.
+URL configuration for finalproject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -16,10 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.item_list, name='item_list'),
-    path('item/<int:item_id>/', views.item_detail, name='item_detail'),
 ]

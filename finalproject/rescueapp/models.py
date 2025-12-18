@@ -7,7 +7,7 @@ class Item(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.quantity} left"
 
 class Animal(models.Model):
     name = models.TextField(max_length=50)
@@ -15,7 +15,15 @@ class Animal(models.Model):
     species = models.TextField(max_length=50)
     gender = models.TextField(max_length=1)
     color = models.TextField(max_length=50)
-    age = models.IntegerField()
+    age = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.name, self.breed, self.species, self.gender, self.color, self.age
+        return f"{self.name}, {self.gender}, {self.color} {self.breed}, {self.age}"
+    
+class Revenue(models.Model):
+    week = models.PositiveIntegerField()
+    income = models.PositiveIntegerField()
+    expense = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"Week: {self.week} - Income: {self.income} - Expense: {self.expense}"
