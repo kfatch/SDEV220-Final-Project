@@ -18,5 +18,8 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    path('', showitems, name="items"),
+    path('', showanimals, name="animals"),
+    path('', showrevenue, name="revenue"),
     path('admin/', admin.site.urls),
 ]

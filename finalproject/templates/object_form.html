@@ -1,0 +1,10 @@
+{% extends "rescueapp/base.html" %}
+{% block title %}{{ form_title }}{% endblock %}
+{% block content %}
+<h1>{{ form_title }}</h1>
+<form method="post">{% csrf_token %}
+  {% include "rescueapp/_form_fields.html" %}
+  <button class="btn btn-success" type="submit">Save</button>
+  <a class="btn btn-secondary" href="{{ cancel_url }}">Cancel</a>
+</form>
+{% endblock %}
