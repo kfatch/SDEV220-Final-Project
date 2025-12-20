@@ -1,0 +1,11 @@
+{% extends "rescueapp/base.html" %}
+
+{% block content %}
+<h1>Add a New Item</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Item</button>
+</form>
+<a href="{% url 'item_list' %}"> Back to Item List</a>
+{% endblock content %}

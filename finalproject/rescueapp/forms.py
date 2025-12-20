@@ -15,4 +15,4 @@ class AnimalForm(forms.ModelForm):
 class RevenueForm(forms.ModelForm):
     class Meta:
         model = Revenue
-        fields = ['week', 'profit', 'expense']
+        fields = ['week', 'income', 'expense']

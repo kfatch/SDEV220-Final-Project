@@ -5,17 +5,17 @@
 <table>
     <thead>
         <tr>
-            <th>Week Number</th>
-            <th>Profit</th>
-            <th>Expense</th>
+            <th scope="col">Week</th>
+            <th scope="col">Income</th>
+            <th scope="col">Expense</th>
         </tr>
     </thead>
     <tbody>
-        {% for revenue in revenue %}
+        {% for r in revenue %}
         <tr>
-            <td>{{ revenue.week }}</td>
-            <td>{{ revenue.profit }}</td>
-            <td>{{ revenue.expense }}</td>
+            <td>{{ r.week }}</td>
+            <td>{{ r.income }}</td>
+            <td>{{ r.expense }}</td>
         </tr>
         {% endfor %}
     </tbody>
