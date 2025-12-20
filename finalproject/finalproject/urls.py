@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rescueapp.views import showitems, showanimals, showrevenue
 
 urlpatterns = [
     path('', showitems, name="items"),
