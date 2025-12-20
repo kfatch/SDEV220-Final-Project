@@ -1,0 +1,23 @@
+{% extends "rescueapp/base.html" %}
+
+{% block content %}
+<h1>Revenue List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Week Number</th>
+            <th>Profit</th>
+            <th>Expense</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for revenue in revenue %}
+        <tr>
+            <td>{{ revenue.week }}</td>
+            <td>{{ revenue.profit }}</td>
+            <td>{{ revenue.expense }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "rescueapp/base.html" %}
+
+{% block content %}
+<h1>Animal List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Species</th>
+            <th>Gender</th>
+            <th>Color</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for animal in animals %}
+        <tr>
+            <td>{{ animal.name }}</td>
+            <td>{{ animal.breed }}</td>
+            <td>{{ animal.species }}</td>
+            <td>{{ animal.gender }}</td>
+            <td>{{ animal.color }}</td>
+            <td>{{ animal.age }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
