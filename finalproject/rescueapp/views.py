@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from .models import Item, Animal, Revenue
 
 # Create your views here.
+class Index(TemplateView):
+    template_name = 'rescueapp/index.html'
+    
 def showitems(request):
     items = Item.objects.all() #fetch all items in db
     return render(request, "index.html", {"items_key": items})
